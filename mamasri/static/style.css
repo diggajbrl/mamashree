@@ -1,0 +1,567 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0px;
+}
+
+figure {
+    margin: 0px;
+}
+
+dl,
+ol,
+ul {
+    padding-left: 0;
+}
+
+li {
+    list-style: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0px;
+}
+
+figure {
+    margin: 0px;
+}
+
+dl,
+ol,
+ul {
+    padding-left: 0;
+}
+
+li {
+    list-style: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@media (max-width: 992px) {
+    .casual .container .row .left {
+        border-right: none !important;
+        border-bottom: 1px solid #dcdcdc;
+    }
+
+    .casual .container .row aside {
+        border-bottom: 0;
+    }
+
+    footer .container .row .support strong,
+    footer .container .row .embassy strong {
+        display: block;
+        margin-top: 25px;
+    }
+}
+
+@media (max-width: 570px) {
+    .casual .container {
+        border-inline: none !important;
+    }
+
+    .casual .container .left {
+        border-right: none !important;
+    }
+}
+
+@media (max-width: 475px) {
+    .casual .container .left .indicator {
+        display: none !important;
+    }
+
+    blockquote,
+    ul,
+    ol {
+        padding: 10px !important;
+    }
+
+    .popup {
+        top: -35px;
+    }
+}
+
+header {
+    padding: 12px 0;
+    border-bottom: 1px solid #dcdcdc;
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .container nav {
+    gap: 35px;
+    display: flex;
+    align-items: center;
+}
+
+header .container nav a {
+    color: #2F6ED5;
+}
+
+header .container nav button {
+    border: none;
+    padding: 8px 20px;
+    border-radius: 6px;
+    color: #fff;
+    background-color: #6556FF;
+}
+
+.strip {
+    padding: 12px 0;
+    border-bottom: 1px solid #dcdcdc;
+}
+
+.strip .container {
+    text-align: center;
+}
+
+.strip .container p {
+    color: #666687;
+}
+
+.strip .container p a {
+    color: #2F6ED5;
+}
+
+.strip .container p a:hover {
+    text-decoration: underline;
+}
+
+.casual .container {
+    border-inline: 1px solid #dcdcdc;
+}
+
+.casual .container .row .scholarships,
+.casual .container .row .articles {
+    padding: 12px;
+    background-color: #fff;
+    border-bottom: 1px solid #dcdcdc;
+}
+
+.casual .container .row .scholarships .index,
+.casual .container .row .articles .index {
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    color: #2F6ED5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.casual .container .row .scholarships .pagination ul,
+.casual .container .row .articles .pagination ul {
+    margin: 0;
+}
+
+.casual .container .row .scholarships .pagination ul li,
+.casual .container .row .articles .pagination ul li {
+    margin-top: 10px;
+}
+
+.casual .container .row .scholarships .pagination ul li a,
+.casual .container .row .articles .pagination ul li a {
+    color: #2F6ED5;
+}
+
+.casual .container .row .scholarships .pagination ul li a:hover,
+.casual .container .row .articles .pagination ul li a:hover {
+    text-decoration: underline;
+}
+
+.casual .container .row .scholarships .pagination ul .showMore,
+.casual .container .row .articles .pagination ul .showMore {
+    cursor: pointer;
+    margin-top: 12px;
+    color: #666687;
+    display: inline-block;
+}
+
+.casual .container .row .left {
+    min-height: 70vh;
+    border-right: 1px solid #dcdcdc;
+}
+
+.casual .container .row .left .indicator {
+    margin: 12px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.casual .container .row .left .indicator p {
+    color: #666687;
+}
+
+.casual .container .row .left .indicator i {
+    color: #666687;
+}
+
+.casual .container .row .left .indicator a {
+    color: #2F6ED5;
+}
+
+.casual .container .row .left .indicator a:hover {
+    text-decoration: underline;
+}
+
+.casual .container .row .left .indicator .breadcrumb {
+    margin: 0;
+}
+
+.casual .container .row .left .docs {
+    margin: 20px 0 60px 0;
+}
+
+.casual .container .row .left .docs a {
+    color: #2F6ED5;
+}
+
+.casual .container .row .left .docs a:hover {
+    text-decoration: underline;
+}
+
+.casual .container .row .left .docs strong {
+    color: #666687;
+}
+
+.casual .container .row .left .docs p {
+    color: #666687;
+}
+
+.casual .container .row .left .docs h1,
+.casual .container .row .left .docs h2,
+.casual .container .row .left .docs h3 {
+    font-size: 24px;
+    color: #222c44;
+    margin-bottom: 16px;
+}
+
+.casual .container .row .left .docs blockquote,
+.casual .container .row .left .docs ul,
+.casual .container .row .left .docs ol {
+    padding: 20px;
+    background-color: #F6F6F9;
+    border-left: 5px solid #8E8EA9;
+}
+
+.casual .container .row .left .docs blockquote p,
+.casual .container .row .left .docs ul p,
+.casual .container .row .left .docs ol p {
+    color: #000;
+}
+
+.casual .container .row .left .docs blockquote li,
+.casual .container .row .left .docs ul li,
+.casual .container .row .left .docs ol li {
+    margin-bottom: 6px;
+}
+
+.casual .container .row .left .docs blockquote li:last-child,
+.casual .container .row .left .docs ul li:last-child,
+.casual .container .row .left .docs ol li:last-child {
+    margin-bottom: 0px;
+}
+
+.casual .container .row .left .docs table {
+    width: 100%;
+    min-width: 600px;
+    margin-bottom: 16px;
+    overflow-x: scroll !important;
+}
+
+.casual .container .row .left .docs table th {
+    padding: 8px;
+    color: #fff;
+    text-align: center;
+    background-color: #666687;
+    border: 0.5px solid rgba(219, 219, 219, 0.3803921569);
+}
+
+.casual .container .row .left .docs table td {
+    padding: 8px;
+    border: 0.5px solid rgba(219, 219, 219, 0.3803921569);
+}
+
+.casual .container .row .left .docs table tr:nth-child(odd) td {
+    background-color: #F6F6F9;
+}
+
+.casual .container .row .left .docs img {
+    border-radius: 6px;
+}
+
+.casual .container aside {
+    top: 0px;
+    height: 100%;
+    position: sticky;
+    margin-top: 12px;
+    border-bottom: 1px solid #dcdcdc;
+}
+
+.casual .container aside .counsellor .caption h1 {
+    font-size: 18px;
+}
+
+.casual .container aside .counsellor .caption h1 i {
+    color: goldenrod;
+}
+
+.casual .container aside .counsellor .caption p {
+    color: #666687;
+}
+
+.casual .container aside .counsellor .contactCounsellor {
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px;
+    border-radius: 6px;
+    color: #fff;
+    margin: 12px 0;
+    background-color: #6556FF;
+}
+
+.casual .container aside .admission {
+    margin: 12px 0;
+}
+
+.casual .container aside .admission button {
+    width: 100%;
+    border: none;
+    padding: 8px 0;
+    border-radius: 6px;
+    color: #2F6ED5;
+    background-color: #f0f7ff;
+}
+
+.casual .container aside .ads {
+    margin-bottom: 12px;
+}
+
+.casual .container aside .ads a figure img {
+    width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.quote {
+    padding: 12px 0;
+    border-top: 1px solid #dcdcdc;
+}
+
+.quote .container {
+    text-align: center;
+}
+
+.quote .container p {
+    color: #666687;
+}
+
+.quote .container p a {
+    color: #2F6ED5;
+}
+
+.quote .container p a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    padding: 30px 0;
+    border-top: 1px solid #dcdcdc;
+}
+
+footer .container strong {
+    color: #666687;
+}
+
+footer .container p {
+    margin-top: 10px;
+    color: #666687;
+}
+
+footer .container p a {
+    color: #2F6ED5;
+}
+
+footer .container p a:hover {
+    text-decoration: underline;
+}
+
+footer .container .subscribe p {
+    margin-top: 0;
+}
+
+footer .container .subscribe p i {
+    color: green;
+}
+
+footer .container .subscribe form input {
+    width: 100%;
+    border: none;
+    margin: 12px 0;
+    padding: 8px 12px;
+    border-radius: 6px;
+    background-color: #f0f7ff;
+}
+
+footer .container .subscribe form button {
+    width: 100%;
+    border: none;
+    padding: 8px 0;
+    border-radius: 6px;
+    color: #fff;
+    background-color: #6556FF;
+}
+
+footer .container .subscribe p {
+    text-align: center;
+}
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgb(255, 255, 255);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.popup-overlay.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup {
+    width: 93%;
+    max-width: 35em;
+    text-align: center;
+    background-color: #fff;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.popup #closePopup {
+    top: 0px;
+    right: 0px;
+    position: absolute;
+    padding: 8px 12px;
+    border-radius: 50%;
+}
+
+.popup button {
+    border: none;
+    padding: 8px 20px;
+    border-radius: 999px;
+    color: #2F6ED5;
+    background-color: #f0f7ff;
+}
+
+.popup h1 {
+    font-size: 1.5rem;
+    margin: 20px 0 8px;
+}
+
+.popup p {
+    color: #666687;
+    font-size: 1rem;
+}
+
+.popup form input {
+    width: 100%;
+    margin-top: 12px;
+    border: 1px solid #dcdcdc;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.popup form button {
+    margin: 12px 0;
+    width: 100%;
+    border-radius: 6px;
+    color: #fff;
+    background-color: #6556FF;
+}
+
+.popup .note {
+    margin-top: 12px;
+}
+
+.popup .note p {
+    font-size: 0.875rem;
+    margin-bottom: 6px;
+}
+
+.popup .note p:last-child {
+    margin-bottom: 0px;
+}
+
+.popup .note p a {
+    color: #2F6ED5;
+    text-decoration: underline;
+}
+
+body.no-scroll {
+    overflow: hidden;
+}

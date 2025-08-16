@@ -1,0 +1,183 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="{{ setting.favicon.url }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="{% static "bootstrap.css" %}">
+    <link rel="stylesheet" href="{% static "style.css" %}">
+    {% block seo %}{% endblock seo %}
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="/">
+                    <img src="{% static "favicon.svg" %}" alt="Mama Shree Official Logo">
+                </a>
+            </div>
+            <nav>
+                <a href="#" id="showArticles">Other Article</a>
+                {% if setting.facebook %}
+                <span>|</span>
+                <a href="{{ setting.facebook }}" target="_blank">
+                    <button>FaceBook</button>
+                </a>
+                {% endif %}
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        {% block strip %}{% endblock strip %}
+
+        <section class="casual">
+            <div class="container">
+                <div class="row">
+
+                    <div class="articles" style="display: none;">
+                        <p class="index">Other Article <i class="bi bi-chevron-compact-down"></i></p>
+                        <nav class="pagination" aria-label="Study in India Articles">
+                            <ul>
+                                {% for article in articles|slice:":7" %}
+                                <li>
+                                    <a href="{% url 'article' article.slug %}">{{ article.title }}</a>
+                                </li>
+                                {% endfor %}
+                                {% if articles|length > 7 %}
+                                {% for article in articles|slice:"7:" %}
+                                <li class="extra-item" style="display:none;">
+                                    <a href="{% url 'article' article.slug %}">{{ article.title }}</a>
+                                </li>
+                                {% endfor %}
+                                <span class="showMore">. . . Show More</span>
+                                {% endif %}
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <div class="scholarships">
+                        <p class="index">Indian Scholarship Scheme <i class="bi bi-chevron-compact-down"></i></p>
+                        <nav class="pagination" style="display: none;" aria-label="Indian Scholarship Categories">
+                            <ul>
+                                {% for scholar in scholarship|slice:":7" %}
+                                <li><a href="{% url 'docs' scholar.slug %}">{{ scholar.title }}</a></li>
+                                {% endfor %}
+                                {% if scholarship|length > 7 %}
+                                {% for scholar in scholarship|slice:"7:" %}
+                                <li class="extra-item" style="display:none;">
+                                    <a href="{% url 'docs' scholar.slug %}">{{ scholar.title }}</a>
+                                </li>
+                                {% endfor %}
+                                <span class="showMore">. . . Show More</span>
+                                {% endif %}
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <section class="col-lg-9 left">
+                        {% block indicator %}{% endblock indicator %}
+                        {% block docs %}
+                        {% endblock docs %}
+                    </section>
+
+                    <aside class="col-lg-3">
+                        {% if counselor %}
+                        <div class="counsellor">
+                            <div class="caption">
+                                <h1><i class="bi bi-patch-check-fill"></i> {{ counselor.name }}</h1>
+                                <p>{{ counselor.position }}</p>
+                            </div>
+                            <a href="https://wa.me/{{counselor.phoneNumber}}" class="contactCounsellor" target="_blank">
+                                <i class="bi bi-whatsapp"></i> Contact on WhatsApp
+                            </a>
+                        </div>
+                        {% endif %}
+
+                        <div class="admission" id="admission">
+                            <button id="openPopup">Apply for Direct Admission</button>
+                        </div>
+
+                        {% block ads %}{% endblock ads %}
+
+                    </aside>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    {% if setting.quote %}
+    <section class="quote">
+        <div class="container">
+            <p>{{ setting.quote | safe }}</p>
+        </div>
+    </section>
+    {% endif %}
+
+    <footer>
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-4 subscribe" id="subscribe">
+                    <p><i class="bi bi-shield-check"></i> Scholarship Snaps to Your Inbox</p>
+                    <form>
+                        <input type="email" required placeholder="📫 example@gmail.com">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+
+                <div class="col-lg-1"></div>
+
+                <div class="col-lg-3 support">
+                    <strong>- Support</strong>
+                    <p><a href="#">Advertise with us</a></p>
+                    <p>Send Inquiry <a href="#">info@google.com</a></p>
+                </div>
+
+                <div class="col-lg-4 embassy">
+                    <strong>- Indian Embassy</strong>
+                    <p>Education Wing <a href="#">01-7876541</a></p>
+                    <p>Location <a href="#">Lazimpat, Kathmandu</a></p>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup">
+            <button id="closePopup"><i class="bi bi-x-lg"></i></button>
+            <div class="container">
+                <button>Secure Admission Portal</button>
+                <h1>Get Direct Admission</h1>
+                <p>College admissions made free with Mama Shree.</p>
+                <form>
+                    <input type="text" required placeholder="Full Name">
+                    <input type="email" required placeholder="example@gmail.com">
+                    <input type="number" required placeholder="980XXXXXXX">
+                    <input type="text" placeholder="College Name (Optional)">
+                    <button type="submit">Apply Now</button>
+                </form>
+                <div class="note">
+                    <p><a href="#">Click Here to know more</a></p>
+                    <p><i class="bi bi-check-circle-fill"></i>&nbsp;
+                        Created by a B.Tech student to help students avoid consultancy fees.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static "script.js" %}"></script>
+
+</body>
+
+</html>

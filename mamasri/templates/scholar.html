@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block seo %}{{ scholar.seo | safe }}{% endblock seo %}
+
+{% block strip %}
+{% if scholar.strip %}
+<section class="strip">
+    <div class="container">
+        <p>{{ scholar.strip | safe }}</p>
+    </div>
+</section>
+{% endif %}
+{% endblock strip %}
+
+{% block indicator %}
+<div class="indicator">
+    <div class="breadcrumb">
+        <p><a href="/">Home</a> <i class="bi bi-arrow-right-short"></i> {{ scholar.title }}</p>
+    </div>
+    <div class="updated">
+        <p><i class="bi bi-calendar-check"></i>&nbsp; {{ scholar.updatedDate }}</p>
+    </div>
+</div>
+{% endblock indicator %}
+
+{% block docs %}
+<div class="docs">{{ scholar.content | safe }}</div>
+{% endblock docs %}
+
+{% block ads %}
+{% if ads.adsImage %}
+<div class="ads">
+    <a href="{{ ads.adsUrl }}" target="_blank">
+        <figure>
+            <img src="{{ ads.adsImage.url }}" alt="{{ ads.adsAlt }}">
+        </figure>
+    </a>
+</div>
+{% endif %}
+{% endblock ads %}
