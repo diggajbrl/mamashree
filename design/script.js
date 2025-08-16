@@ -1,39 +1,3 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('newsletterForm');
-    if (!form) {
-        console.error('Form not found!');
-        return;
-    }
-
-    form.addEventListener('submit', function (event) {
-        event.preventDefault();
-        console.log('Form submitted');
-
-        const emailInput = document.getElementById('emailInput');
-        const formData = new FormData(form);
-
-        console.log('Form data:', formData.get('email'));
-
-        fetch('/subscribe/', {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'X-CSRFToken': formData.get('csrfmiddlewaretoken')
-            }
-        })
-            .then(response => response.json())
-            .then(data => {
-                console.log('Response data:', data);
-                emailInput.placeholder = data.message;
-                emailInput.value = '';
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                emailInput.placeholder = 'An error occurred. Please try again.';
-            });
-    });
-});
-
 function resetDropdowns() {
     document.querySelectorAll('.pagination, .articles').forEach(el => el.style.display = 'none');
     document.querySelectorAll('.index').forEach(item => {
@@ -98,43 +62,22 @@ const popupOverlay = document.getElementById('popupOverlay');
 
 openPopup.addEventListener('click', () => {
     popupOverlay.classList.add('active');
-    document.body.classList.add('no-scroll');
+    document.body.classList.add('no-scroll'); // Disable scrolling
 });
 
 closePopup.addEventListener('click', () => {
     popupOverlay.classList.remove('active');
-    document.body.classList.remove('no-scroll');
+    document.body.classList.remove('no-scroll'); // Re-enable scrolling
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll(".left .docs table").forEach(function (table) {
-        const wrapper = document.createElement("div");
-        wrapper.classList.add("table-wrapper");
-        wrapper.style.overflowX = "auto";
-        wrapper.style.webkitOverflowScrolling = "touch";
+  document.querySelectorAll(".left .docs table").forEach(function (table) {
+    const wrapper = document.createElement("div");
+    wrapper.classList.add("table-wrapper");
+    wrapper.style.overflowX = "auto";
+    wrapper.style.webkitOverflowScrolling = "touch";
 
-        table.parentNode.insertBefore(wrapper, table);
-        wrapper.appendChild(table);
-    });
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll(".showMore").forEach(function (btn) {
-        btn.style.cursor = "pointer";
-
-        btn.addEventListener("click", function () {
-            const container = btn.closest("ul");
-            const hiddenItems = container.querySelectorAll(".extra-item");
-
-            if (hiddenItems.length === 0) return;
-
-            const isHidden = hiddenItems[0].style.display === "none" || hiddenItems[0].style.display === "";
-
-            hiddenItems.forEach(item => {
-                item.style.display = isHidden ? "list-item" : "none";
-            });
-
-            btn.textContent = isHidden ? ". . . Show Less" : ". . . Show More";
-        });
-    });
+    table.parentNode.insertBefore(wrapper, table);
+    wrapper.appendChild(table);
+  });
 });

@@ -128,9 +128,10 @@
 
                 <div class="col-lg-4 subscribe" id="subscribe">
                     <p><i class="bi bi-shield-check"></i> Scholarship Snaps to Your Inbox</p>
-                    <form>
-                        <input type="email" required placeholder="📫 example@gmail.com">
-                        <button type="submit">Subscribe</button>
+                    <form id="newsletterForm" method="POST">
+                        {% csrf_token %}
+                        <input type="email" id="emailInput" name="email" placeholder="📫 example@gmail.com" required>
+                        <button type="submit">SUBSCRIBE</button>
                     </form>
                 </div>
 

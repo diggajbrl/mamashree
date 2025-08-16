@@ -1,0 +1,68 @@
+@import "common";
+
+@media (max-width: 992px) {
+    .casual {
+        .container {
+            .row {
+                .left {
+                    border-right: none !important;
+                    border-bottom: 1px solid #dcdcdc;
+                }
+
+                aside {
+                    border-bottom: 0;
+                }
+            }
+        }
+    }
+
+    footer {
+        .container {
+            .row {
+
+                .support,
+                .embassy {
+                    strong {
+                        display: block;
+                        margin-top: 25px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 570px) {
+    .casual {
+        .container {
+            border-inline: none !important;
+
+            .left {
+                border-right: none !important;
+            }
+        }
+    }
+}
+
+@media (max-width: 475px) {
+    .casual {
+        .container {
+
+            .left {
+                .indicator {
+                    display: none !important;
+                }
+            }
+        }
+    }
+
+    blockquote,
+    ul,
+    ol {
+        padding: 10px !important;
+    }
+
+    .popup {
+        top: -35px;
+    }
+}

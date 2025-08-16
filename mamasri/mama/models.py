@@ -92,8 +92,12 @@ class Subscriber(models.Model):
     email = models.EmailField(unique=True)
     date = models.DateField(auto_now_add=True)
 
+    def save(self, *args, **kwargs):
+        self.email = self.email.lower()
+        super().save(*args, **kwargs)
+
     def __str__(self):
-        return self.email
+        return f'{self.email} - {self.date}'
     
 class Student(models.Model):
 
